@@ -1,0 +1,14 @@
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n == 0:
+            return 0
+
+        prv = 0
+        cur = 1
+
+        for i in range(1, n+1):
+            tmp = cur
+            cur = prv + cur
+            prv = tmp
+
+        return cur
